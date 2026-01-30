@@ -101,6 +101,8 @@
   position: relative;
   padding-bottom: 0.2em;
   transition: color 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
 }
 .nav-links a.active,
 .nav-links a:hover {

@@ -22,9 +22,6 @@ export default function Home() {
           <a href="#">ELEMENTS</a>
         </nav>
         <div className="header-actions">
-          <button className="search-btn" aria-label="Search">
-            <span role="img" aria-label="search">🔍</span>
-          </button>
         </div>
       </header>
 
@@ -52,7 +49,7 @@ export default function Home() {
         </button>
         {/* Side Buttons */}
         <div className="side-buttons">
-          <button className="related-btn">RELATED</button>
+          <button className="related-btn">CONTACT US</button>
           <button className="buy-btn">BUY NOW</button>
         </div>
       </section>
