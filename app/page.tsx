@@ -1,65 +1,61 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="homepage-hero">
+      {/* Header/Navbar */}
+      <header className="homepage-header">
+        <div className="logo">
+          <span className="logo-accent">PINK</span>ORCHIDS
+        </div>
+        <button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenuOpen((v) => !v)}>
+          <span className="menu-icon">☰</span>
+        </button>
+        <nav className={`nav-links${menuOpen ? " open" : ""}`}>
+          <a href="#" className="active">HOME</a>
+          <a href="#">PAGES</a>
+          <a href="#">SHOP</a>
+          <a href="#">PORTFOLIO</a>
+          <a href="#">BLOG</a>
+          <a href="#">ELEMENTS</a>
+        </nav>
+        <div className="header-actions">
+          <button className="search-btn" aria-label="Search">
+            <span role="img" aria-label="search">🔍</span>
+          </button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="hero-content">
+        <div className="hero-left">
+          <h1 className="hero-title">
+            Send <span className="highlight">flowers</span> like you mean it.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="hero-desc">
+            Where flowers are our inspiration to create lasting memories. Whatever the occasion, our flowers will make it special.
           </p>
+          <div className="signature">Cathrine</div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="hero-right">
+          {/* Placeholder for cactus image */}
+          <img src="/cactus-hero.png" alt="Cactus with flower" className="hero-image" />
         </div>
-      </main>
-    </div>
+        {/* Arrows */}
+        <button className="arrow left" aria-label="Previous">
+          <span>&larr;</span>
+        </button>
+        <button className="arrow right" aria-label="Next">
+          <span>&rarr;</span>
+        </button>
+        {/* Side Buttons */}
+        <div className="side-buttons">
+          <button className="related-btn">RELATED</button>
+          <button className="buy-btn">BUY NOW</button>
+        </div>
+      </section>
+    </main>
   );
 }

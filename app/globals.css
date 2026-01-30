@@ -1,3 +1,343 @@
+/* Responsive Top Menu */
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 20;
+}
+.menu-icon {
+  display: block;
+}
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  padding: 2rem 0 1rem 0;
+  z-index: 10;
+  gap: 1.5rem;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.nav-links.open {
+  display: flex;
+}
+@media (min-width: 900px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 2.5rem;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+}
+/* Homepage Styles - Mobile First */
+.homepage-hero {
+  min-height: 100vh;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.homepage-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1.2rem 1.2rem 1rem 1.2rem;
+  background: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.logo {
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  font-size: 1.6rem;
+}
+.logo-accent {
+  color: #ff4e4e;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.nav-links {
+  /* Responsive styles above */
+  transition: max-height 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s cubic-bezier(.4,0,.2,1);
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  margin-top: 0.5rem;
+}
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  position: relative;
+  padding-bottom: 0.2em;
+  transition: color 0.2s;
+}
+.nav-links a.active,
+.nav-links a:hover {
+  color: #000;
+  font-weight: 600;
+  border-bottom: 2px solid #000;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.95rem;
+}
+.cart-icon {
+  font-size: 1.2rem;
+}
+.cart-count {
+  color: #ff4e4e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-left: 0.1em;
+}
+.cart-label {
+  margin-left: 0.3em;
+  color: #222;
+  font-size: 0.95rem;
+}
+
+/* Hero Section */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1;
+  padding: 2rem 1rem 0 1rem;
+  min-height: 400px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-left {
+  width: 100%;
+  padding: 0 1.2rem;
+  z-index: 2;
+  text-align: center;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+.highlight {
+  color: #ff4e4e;
+  font-weight: 600;
+}
+.hero-desc {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+.signature {
+  font-family: 'Pacifico', cursive, sans-serif;
+  color: #ff4e4e;
+  font-size: 1.5rem;
+  margin-top: 1.2rem;
+}
+.hero-right {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+  margin-top: 2rem;
+}
+.hero-image {
+  max-width: 90vw;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  background: #f7f7f7;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #bbb;
+  cursor: pointer;
+  z-index: 3;
+  padding: 0 1rem;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .arrow {
+    display: block;
+  }
+}
+.arrow.left {
+  left: 1vw;
+}
+.arrow.right {
+  right: 1vw;
+}
+.arrow:hover {
+  color: #ff4e4e;
+}
+
+/* Side Buttons */
+.side-buttons {
+  position: static;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 0 0 0;
+  justify-content: center;
+}
+.related-btn, .buy-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: background 0.2s, color 0.2s;
+}
+.related-btn {
+  background: #ff4e4e;
+  color: #fff;
+}
+.related-btn:hover {
+  background: #e63b3b;
+}
+.buy-btn {
+  background: #fff;
+  color: #ff4e4e;
+  border: 2px solid #ff4e4e;
+}
+.buy-btn:hover {
+  background: #ff4e4e;
+  color: #fff;
+}
+
+@media (min-width: 900px) {
+  .homepage-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding: 2rem 4rem 1.5rem 4rem;
+  }
+  .logo {
+    font-size: 2.2rem;
+  }
+  .nav-links {
+    gap: 2.5rem;
+    font-size: 1.1rem;
+  }
+  .header-actions {
+    gap: 2rem;
+  }
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0 0 0;
+    min-height: 600px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .hero-left {
+    width: 50%;
+    padding-left: 4vw;
+    text-align: left;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .hero-desc {
+    font-size: 1.25rem;
+    max-width: 32rem;
+  }
+  .signature {
+    font-size: 2.2rem;
+  }
+  .hero-right {
+    width: 50%;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 4vw;
+  }
+  .hero-image {
+    max-width: 480px;
+    border-radius: 0;
+    background: #f7f7f7;
+  }
+  .arrow {
+    display: block;
+  }
+  .side-buttons {
+    position: absolute;
+    right: 2vw;
+    bottom: 3vw;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 0;
+    justify-content: flex-start;
+  }
+}
 @import "tailwindcss";
 
 :root {
