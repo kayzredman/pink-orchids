@@ -158,21 +158,27 @@
 }
 .hero-left {
   width: 100%;
-  padding: 0 1.2rem;
+  max-width: 540px;
+  padding-left: 60px;
+  padding-right: 2vw;
   z-index: 2;
-  text-align: center;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 3.2rem;
+  font-weight: 700;
   color: #222;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   line-height: 1.1;
-}
-.highlight {
-  color: #ff4e4e;
-  font-weight: 600;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  max-width: 520px;
+  word-break: break-word;
 }
 .hero-desc {
   font-size: 1rem;

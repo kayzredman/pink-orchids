@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,9 +15,8 @@ export default function Home() {
           <span className="menu-icon">☰</span>
         </button>
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>
-          <a href="#" className="active">HOME</a>
+          <Link href="/" className="active">HOME</Link>
           <a href="#">PAGES</a>
-          <a href="#">SHOP</a>
           <a href="#">PORTFOLIO</a>
           <a href="#">BLOG</a>
           <a href="#">ELEMENTS</a>
