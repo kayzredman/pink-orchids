@@ -19,7 +19,7 @@ export default function Home() {
           <a href="#">OUR STORY</a>
           <a href="#">BOUQUETS</a>
           <a href="#">BLOG</a>
-          <a href="#">CONTACT US</a>
+          <Link href="/contact">CONTACT US</Link>
         </nav>
         <div className="header-actions">
         </div>
@@ -49,7 +49,7 @@ export default function Home() {
         </button>
         {/* Side Buttons */}
         <div className="side-buttons">
-          <button className="related-btn">CONTACT US</button>
+          <Link href="/contact" className="related-btn">CONTACT US</Link>
           <button className="buy-btn">BUY NOW</button>
         </div>
       </section>
