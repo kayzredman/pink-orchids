@@ -16,10 +16,10 @@ export default function Home() {
         </button>
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>
           <Link href="/" className="active">HOME</Link>
-          <a href="#">PAGES</a>
-          <a href="#">PORTFOLIO</a>
+          <a href="#">OUR STORY</a>
+          <a href="#">BOUQUETS</a>
           <a href="#">BLOG</a>
-          <a href="#">ELEMENTS</a>
+          <a href="#">CONTACT US</a>
         </nav>
         <div className="header-actions">
         </div>
