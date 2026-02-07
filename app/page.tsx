@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +39,14 @@ export default function Home() {
         </div>
         <div className="hero-right">
           {/* Placeholder for cactus image */}
-          <img src="/cactus-hero.png" alt="Cactus with flower" className="hero-image" />
+          <Image
+            src="/cactus-hero.png"
+            alt="Cactus with flower"
+            className="hero-image"
+            width={340}
+            height={340}
+            style={{ objectFit: "cover", borderRadius: "1.5rem" }}
+          />
         </div>
         {/* Arrows */}
         <button className="arrow left" aria-label="Previous">

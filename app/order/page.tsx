@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 
 export default function OrderPage() {
@@ -45,7 +46,16 @@ export default function OrderPage() {
           {/* Left column: Flower image and price */}
           <div className="order-col-left">
             <div className="order-flower">
-              <img src={image} alt="Bouquet" className="order-flower-img" />
+              {image && (
+                <Image
+                  src={image.startsWith("http") ? image : image.startsWith("/") ? image : "/" + image}
+                  alt="Bouquet"
+                  className="order-flower-img"
+                  width={340}
+                  height={340}
+                  style={{ objectFit: "cover", borderRadius: "1.5rem", marginBottom: "1.2rem" }}
+                />
+              )}
               <div className="order-flower-price">{price}</div>
             </div>
           </div>
