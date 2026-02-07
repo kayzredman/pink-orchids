@@ -1,3 +1,140 @@
+/* Bouquets Hero Section Styles */
+.bouquet-hero-section {
+  width: 100%;
+  background: #f7f7f7;
+  padding: 2rem 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bouquet-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.bouquet-hero-img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+}
+.bouquet-hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+  text-align: center;
+}
+.bouquet-hero-desc {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 900px) {
+  .bouquet-hero-section {
+    padding: 3rem 0 2rem 0;
+  }
+  .bouquet-hero-inner {
+    max-width: 900px;
+  }
+  .bouquet-hero-img {
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+  .bouquet-hero-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+  .bouquet-hero-desc {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}
+/* Bouquets Gallery Styles */
+.bouquet-gallery {
+  width: 100%;
+  padding: 2rem 0.5rem 2rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bouquet-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+@media (min-width: 600px) {
+  .bouquet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .bouquet-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+  }
+}
+.bouquet-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  position: relative;
+  min-height: 320px;
+}
+.bouquet-img {
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 0.7rem;
+  margin-bottom: 1.2rem;
+  background: #fafafa;
+}
+.bouquet-label {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  background: #ff4e4e;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  padding: 0.2rem 0.8rem;
+  z-index: 2;
+}
+.bouquet-label.sold {
+  background: #222;
+}
+.bouquet-label.sale {
+  background: #e6b800;
+}
+.bouquet-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.bouquet-price {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 0.2rem;
+}
 /* Contact Page Styles */
 .contact-page {
   min-height: 100vh;
@@ -142,11 +279,12 @@
 .homepage-hero {
   min-height: 100vh;
   background: #f7f7f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 100vw;
+}
+.bouquet-page {
+  width: 100vw;
+  background: #f7f7f7;
 }
 
 .homepage-header {

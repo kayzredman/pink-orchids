@@ -11,18 +11,18 @@ export default function Home() {
         <div className="logo">
           <span className="logo-accent">PINK</span>ORCHIDS
         </div>
+        <div style={{ flex: 1 }} />
         <button className="menu-toggle" aria-label="Toggle menu" onClick={() => setMenuOpen((v) => !v)}>
           <span className="menu-icon">☰</span>
         </button>
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>
           <Link href="/" className="active">HOME</Link>
           <a href="#">OUR STORY</a>
-          <a href="#">BOUQUETS</a>
-          <a href="#">BLOG</a>
+          <Link href="/bouquets">BOUQUETS</Link>
+           <Link href="/blog">BLOG</Link>
           <Link href="/contact">CONTACT US</Link>
         </nav>
-        <div className="header-actions">
-        </div>
+        <div className="header-actions"></div>
       </header>
 
       {/* Hero Section */}

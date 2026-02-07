@@ -31,8 +31,8 @@ export default function Contact() {
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>
           <Link href="/" className="active">HOME</Link>
           <a href="#">OUR STORY</a>
-          <a href="#">BOUQUETS</a>
-          <a href="#">BLOG</a>
+          <Link href="/bouquets">BOUQUETS</Link>
+          <Link href="/blog">BLOG</Link>
           <Link href="/contact">CONTACT US</Link>
         </nav>
         <div className="header-actions"></div>
