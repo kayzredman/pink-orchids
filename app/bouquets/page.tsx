@@ -45,8 +45,9 @@ export default function Bouquets() {
             return (
               <div className="bouquet-card" key={src}>
                 <img src={src} alt={`Bouquet ${num}`} className="bouquet-img" />
-                <div className="bouquet-name">Bouquet {num}</div>
-                <div className="bouquet-price">$259</div>
+                <button className="buy-btn" style={{marginTop: '1rem', width: '100%'}}>
+                  Buy Now - $259
+                </button>
               </div>
             );
           })}
