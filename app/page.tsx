@@ -58,7 +58,7 @@ export default function Home() {
         {/* Side Buttons */}
         <div className="side-buttons">
           <Link href="/contact" className="related-btn">CONTACT US</Link>
-          <button className="buy-btn">BUY NOW</button>
+          <Link href="/bouquets" className="buy-btn">BUY BOUQUETS</Link>
         </div>
       </section>
     </main>

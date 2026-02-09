@@ -43,7 +43,7 @@ export default function Contact() {
         <div className="contact-left">
           <h1 className="hero-title">Contact Us</h1>
           <p className="hero-desc">We&apos;d love to hear from you! Send us a message below and we&apos;ll get back to you soon.</p>
-          <form className="contact-form" onSubmit={handleSend}>
+          <form className="contact-form" onSubmit={handleSend} autoComplete="off">
             <input
               type="text"
               placeholder="Your Name"
@@ -51,6 +51,7 @@ export default function Contact() {
               onChange={e => setName(e.target.value)}
               className="contact-input"
               required
+              autoComplete="off"
             />
             <input
               type="text"
@@ -59,6 +60,7 @@ export default function Contact() {
               onChange={e => setContact(e.target.value)}
               className="contact-input"
               required
+              autoComplete="off"
             />
             <textarea
               placeholder="Your Message"
@@ -66,6 +68,7 @@ export default function Contact() {
               onChange={e => setMessage(e.target.value)}
               className="contact-textarea"
               required
+              autoComplete="off"
             />
             <button type="submit" className="contact-send-btn">Send via WhatsApp</button>
           </form>
