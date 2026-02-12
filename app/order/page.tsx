@@ -45,7 +45,7 @@ function OrderSection() {
                   priceValue = match[2];
                 }
                 // Format message for WhatsApp, exclude special characters
-                function clean(str) {
+                function clean(str: string) {
                   return String(str).replace(/[^\w\s\d\-\.:]/g, "").trim();
                 }
                 const msg =
