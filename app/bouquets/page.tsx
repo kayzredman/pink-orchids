@@ -39,18 +39,54 @@ export default function Bouquets() {
       {/* Bouquets Gallery */}
       <section className="bouquet-gallery">
         <div className="bouquet-grid">
-          {Array.from({ length: 36 }, (_, i) => {
-            const num = i + 1;
-            const src = `/bouquet_images/Designer (${num}).png`;
+          {[
+            "PV01 - GHS6500.png",
+            "PV02 - GHS1800.png",
+            "PV03 - GHS2000.png",
+            "PV04 - GHS600.png",
+            "PV05 - GHS1000.png",
+            "PV06 - GHS 800.png",
+            "PV07 - GHS600.png",
+            "PV08 - GHS2200.png",
+            "PV09 - GHS2000.png",
+            "PV10 - GHS7000.png",
+            "PV11 - GHS600.png",
+            "PV12 - GHS1400.png",
+            "PV13 - GHS1000.png",
+            "PV14 - GHS600.png",
+            "PV15 - GHS2300.png",
+            "PV16 - GHS23000.png",
+            "PV17 - GHS1600.png",
+            "PV18 - GHS1700.png",
+            "PV19 - GHS2000.png",
+            "PV20 - GHS1800.png",
+            "PV21 - GHS1500.png",
+            "PV22 - GHS1800.png",
+            "PV23 - GHS1800.png",
+            "PV24 - GHS2000.png",
+            "PV25. - GHS2500.png",
+            "PV26 - GHS3500.png",
+            "PV27 - GHS2200.png",
+            "PV28 - GHS2200.png",
+            "PV29 - GHS2500.png",
+            "PV30 - GHS3000.png",
+            "PV31 - GHS1500.png",
+            "PV32 - GHS500.png",
+            "PV33 - GHS1500.png"
+          ].map((file, i) => {
+            const src = `/bouquet_images/${file}`;
+            // Extract price from filename
+            const priceMatch = file.match(/GHS\s?([\d]+)/i);
+            const price = priceMatch ? `GHS${priceMatch[1]}` : "GHS";
             return (
               <div className="bouquet-card" key={src}>
-                <img src={src} alt={`Bouquet ${num}`} className="bouquet-img" />
+                <img src={src} alt={`Bouquet ${i + 1}`} className="bouquet-img" />
                 <a
-                  href={`/order?image=${encodeURIComponent(src)}&price=$259`}
+                  href={`/order?image=${encodeURIComponent(src)}&price=${price}`}
                   className="buy-btn"
                   style={{marginTop: '1rem', width: '100%', textAlign: 'center', display: 'block'}}
                 >
-                  Buy Now - $259
+                  Buy Now - {price}
                 </a>
               </div>
             );

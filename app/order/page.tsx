@@ -24,7 +24,7 @@ function OrderSection() {
         <div className="order-col-left">
           <div className="order-flower">
             <img src={image} alt="Bouquet" className="order-flower-img" />
-            <div className="order-flower-price">{price}</div>
+            <div className="order-flower-price" style={{ textAlign: 'center', width: '100%' }}>{price}</div>
           </div>
         </div>
         {/* Right column: Form fields */}
@@ -36,16 +36,28 @@ function OrderSection() {
                 e.preventDefault();
                 const siteUrl = typeof window !== "undefined" ? window.location.origin : "";
                 const imageUrl = image.startsWith("http") ? image : siteUrl + image;
+                // Extract code and price from image filename
+                let code = "";
+                let priceValue = price;
+                const match = image.match(/\/bouquet_images\/(PV\d+)[^\d]*(\d+)/i);
+                if (match) {
+                  code = match[1];
+                  priceValue = match[2];
+                }
+                // Format message for WhatsApp, exclude special characters
+                function clean(str) {
+                  return String(str).replace(/[^\w\s\d\-\.:]/g, "").trim();
+                }
                 const msg =
-                  `Order Details:%0A` +
-                  `Bouquet Image: ${imageUrl}%0A` +
-                  `Price: ${price}%0A` +
-                  `Your Name: ${customerName}%0A` +
-                  `Your Contact: ${customerContact}%0A` +
-                  `Recipient's Name: ${recipientName}%0A` +
-                  `Recipient's Contact: ${recipientContact}%0A` +
-                  `Delivery Address: ${deliveryAddress}%0A` +
-                  `Card Note: ${note}`;
+                  `Order Details\n` +
+                  `Code: ${clean(code)}\n` +
+                  `Price: ${clean(priceValue)}\n` +
+                  `Your Name: ${clean(customerName)}\n` +
+                  `Your Contact: ${clean(customerContact)}\n` +
+                  `Recipient Name: ${clean(recipientName)}\n` +
+                  `Recipient Contact: ${clean(recipientContact)}\n` +
+                  `Delivery Address: ${clean(deliveryAddress)}\n` +
+                  `Card Note: ${clean(note)}`;
                 const whatsappNumber = "233203364755";
                 window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, '_blank');
               }}
